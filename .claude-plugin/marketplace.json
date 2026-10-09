@@ -10,6 +10,11 @@
       "description": "When the 5-hour usage limit is hit, wait for the reset and send \"continue\" automatically."
     },
     {
+      "name": "session-sidebar",
+      "source": "./mods/session-sidebar",
+      "description": "A right-hand sidebar for the session: every link mentioned, things to know, and action items you tick off into a collapsible Done list."
+    },
+    {
       "name": "cache-tax",
       "source": "./vendor/cache-tax",
       "description": "Keeps the one-hour prompt cache warm during breaks and stops a cold send once with its estimated rewrite cost. By Karan Bansal (vendored)."

@@ -13,3 +13,6 @@
 [submodule "mods/auto-continue"]
 	path = mods/auto-continue
 	url = https://github.com/icedevil2001/auto-continue.git
+[submodule "mods/session-sidebar"]
+	path = mods/session-sidebar
+	url = https://github.com/icedevil2001/session-sidebar.git

@@ -7,6 +7,7 @@ My Claude Code mods in one place: plugins of function hooks that add UI, command
 | Mod | What it does | Source |
 | --- | --- | --- |
 | [auto-continue](mods/auto-continue) | When the 5-hour usage limit is hit, waits for the reset and sends "continue" for you. | Mine: [icedevil2001/auto-continue](https://github.com/icedevil2001/auto-continue) (submodule) |
+| [session-sidebar](mods/session-sidebar) | Right-hand sidebar with the session's links, things to know and action items; ticked items cross out and fold into a Done dropdown. Inspired by [samaphp/session-links](https://github.com/samaphp/session-links). | Mine: [icedevil2001/session-sidebar](https://github.com/icedevil2001/session-sidebar) (submodule) |
 | [cache-tax](vendor/cache-tax) | Keeps the prompt cache warm during breaks and warns before a costly cold send. Needs Claude Code 2.1.287+. | [karanb192/cache-tax](https://github.com/karanb192/cache-tax) |
 | [blast-radius](vendor/claude-code-playground/claude-code/mods/blast-radius) | Holds a risky shell command (`rm -rf`, `git reset --hard`, force push, migration) and shows what it would change, with Proceed and Cancel. | [anthropics/claude-code-playground → blast-radius](https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/blast-radius) |
 | [replay-theater](vendor/claude-code-playground/claude-code/mods/replay-theater) | Step through the file edits Claude made in the last turn, one diff at a time. | [anthropics/claude-code-playground → replay-theater](https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/replay-theater) |
@@ -36,7 +37,7 @@ Every mod here is a git submodule, so clone with `--recurse-submodules` and add 
 ```bash
 git clone --recurse-submodules https://github.com/icedevil2001/claude-mods ~/git/Claude_mods
 claude plugin marketplace add ~/git/Claude_mods
-for m in auto-continue cache-tax blast-radius replay-theater reflect-mod savvy-progress savvy-flow; do
+for m in auto-continue session-sidebar cache-tax blast-radius replay-theater reflect-mod savvy-progress savvy-flow; do
   claude plugin install "$m@claude-mods" --scope user
 done
 ```
