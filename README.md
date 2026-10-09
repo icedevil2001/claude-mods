@@ -8,7 +8,14 @@ Small mods for [Claude Code](https://claude.com/claude-code): plugins of functio
 | --- | --- |
 | [auto-continue](mods/auto-continue) | When the 5-hour usage limit is hit, waits for the reset and sends "continue" for you. |
 
-## Use a mod
+## Install (global)
+
+```bash
+claude plugin marketplace add icedevil2001/claude-mods
+claude plugin install auto-continue@claude-mods --scope user
+```
+
+## Try a mod without installing
 
 ```bash
 claude --plugin-dir ~/git/Claude_mods/mods/auto-continue
