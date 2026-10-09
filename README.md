@@ -42,7 +42,7 @@ Try a mod for one session without installing: `claude --plugin-dir ~/git/Claude_
 
 - **Install only what you want.** `cache-tax` pings the model while armed and `reflect-mod` sends each short prompt to a small model, so both use tokens.
 - **Don't run the original `claude-reflect` Python plugin alongside `reflect-mod`** (every correction would be captured twice).
-- **Versions:** `cache-tax` says it needs Claude Code 2.1.287+ and `reflect-mod` 2.1.286+. All five mods install and answer their commands on 2.1.286 (checked 2026-10-08, headless), but only `cache-tax`'s own tests and `claude plugin validate` were run against it there. The mod API is early access and moves between releases.
+- **Versions:** `cache-tax` says it needs Claude Code 2.1.287+ and `reflect-mod` 2.1.286+. All five mods install and answer their commands on 2.1.286 (checked 2026-10-08, headless), and `claude plugin validate` passes for all; `auto-continue`, `cache-tax` and `reflect-mod` also pass their own tests. The mod API is early access and moves between releases.
 - Check one with `claude plugin validate mods/<name>`; mods with tests run with `claude plugin test mods/<name>`.
 
 ## Licenses
