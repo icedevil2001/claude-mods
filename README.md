@@ -7,6 +7,7 @@ Small mods for [Claude Code](https://claude.com/claude-code): plugins of functio
 | Mod | What it does |
 | --- | --- |
 | [auto-continue](mods/auto-continue) | When the 5-hour usage limit is hit, waits for the reset and sends "continue" for you. |
+| [cache-tax](mods/cache-tax) | Keeps the prompt cache warm during breaks and warns before a costly cold send. Vendored from [karanb192/cache-tax](https://github.com/karanb192/cache-tax) (MIT); needs Claude Code 2.1.287+. |
 
 ## Install (global)
 

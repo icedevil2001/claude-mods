@@ -1,11 +1,18 @@
 {
   "name": "claude-mods",
-  "owner": { "name": "icedevil2001" },
+  "owner": {
+    "name": "icedevil2001"
+  },
   "plugins": [
     {
       "name": "auto-continue",
       "source": "./mods/auto-continue",
       "description": "When the 5-hour usage limit is hit, wait for the reset and send \"continue\" automatically."
+    },
+    {
+      "name": "cache-tax",
+      "source": "./mods/cache-tax",
+      "description": "Keeps the one-hour prompt cache warm during breaks and stops a cold send once with its estimated rewrite cost. By Karan Bansal (vendored)."
     }
   ]
 }
