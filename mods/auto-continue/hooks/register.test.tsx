@@ -46,3 +46,29 @@ test('does nothing while disarmed', async ($, on) => {
   await clock.advance(2 * HOUR)
   expect(sent).toEqual([])
 })
+
+const band = { hasSurvey: false, isWorking: false, maxRows: 10, bodyColumns: 80 } as never
+const measure = (percentUsed: number) =>
+  ({ context: {}, rateLimits: [{ kind: 'five_hour', percentUsed }], changed: ['rateLimits'] }) as never
+
+test('the button shows from 25% used, hidden below', async ($, on) => {
+  on('session.measure', (_$, e) => ({ changed: e.changed }))
+  on('ui.render', ($, e) => {
+    const { Text } = $.ui.resolve(e)
+
+    return <Text>engine</Text>
+  })
+  const mountBand = () => $.ui.mount({ plugin: 'auto-continue', surface: 'terminal', component: 'AbovePrompt', props: band })
+
+  await $.session.measure(measure(10))
+  let ui = await mountBand()
+  expect(await ui.find({ key: 'toggle' })).toBeUndefined()
+  await ui.unmount()
+
+  await $.session.measure(measure(30))
+  ui = await mountBand()
+  expect((await ui.find({ key: 'toggle' }))?.text).toMatch(/Auto-continue: OFF/)
+  await ui.press({ key: 'toggle' })
+  expect((await ui.find({ key: 'toggle' }))?.text).toMatch(/Auto-continue: ON/)
+  await ui.unmount()
+})
