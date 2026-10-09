@@ -1,0 +1,15 @@
+[submodule "vendor/cache-tax"]
+	path = vendor/cache-tax
+	url = https://github.com/karanb192/cache-tax.git
+[submodule "vendor/claude-code-playground"]
+	path = vendor/claude-code-playground
+	url = https://github.com/anthropics/claude-code-playground.git
+[submodule "vendor/claude-reflect"]
+	path = vendor/claude-reflect
+	url = https://github.com/BayramAnnakov/claude-reflect.git
+[submodule "vendor/claude-kit"]
+	path = vendor/claude-kit
+	url = https://github.com/JohnnyVizz/claude-kit.git
+[submodule "mods/auto-continue"]
+	path = mods/auto-continue
+	url = https://github.com/icedevil2001/auto-continue.git

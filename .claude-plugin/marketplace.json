@@ -11,32 +11,32 @@
     },
     {
       "name": "cache-tax",
-      "source": "./mods/cache-tax",
+      "source": "./vendor/cache-tax",
       "description": "Keeps the one-hour prompt cache warm during breaks and stops a cold send once with its estimated rewrite cost. By Karan Bansal (vendored)."
     },
     {
       "name": "blast-radius",
-      "source": "./mods/blast-radius",
+      "source": "./vendor/claude-code-playground/claude-code/mods/blast-radius",
       "description": "Holds risky shell commands (rm -rf, git reset --hard, force push, migrations) and shows what they would change, with Proceed and Cancel buttons. By Anthropic (vendored)."
     },
     {
       "name": "replay-theater",
-      "source": "./mods/replay-theater",
+      "source": "./vendor/claude-code-playground/claude-code/mods/replay-theater",
       "description": "Step through the file edits Claude made in the last turn, one diff at a time. By Anthropic (vendored)."
     },
     {
       "name": "reflect-mod",
-      "source": "./mods/reflect-mod",
+      "source": "./vendor/claude-reflect/mod",
       "description": "Finds reusable corrections in your short prompts and saves them to CLAUDE.md from a band above the prompt. By Bayram Annakov (vendored)."
     },
     {
       "name": "savvy-progress",
-      "source": "./mods/savvy-progress",
+      "source": "./vendor/claude-kit/plugins/savvy-progress",
       "description": "Progress bar above the prompt for /savvy-flow plus a live panel of subagents with model, context, cost and time. By johnnyvizz (vendored)."
     },
     {
       "name": "savvy-flow",
-      "source": "./mods/savvy-flow",
+      "source": "./vendor/claude-kit/plugins/savvy-flow",
       "description": "Orchestrated delivery flow: the session model plans and reviews, five tiered worker subagents implement. By johnnyvizz (vendored)."
     }
   ],
