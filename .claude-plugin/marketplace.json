@@ -13,6 +13,22 @@
       "name": "cache-tax",
       "source": "./mods/cache-tax",
       "description": "Keeps the one-hour prompt cache warm during breaks and stops a cold send once with its estimated rewrite cost. By Karan Bansal (vendored)."
+    },
+    {
+      "name": "blast-radius",
+      "source": "./mods/blast-radius",
+      "description": "Holds risky shell commands (rm -rf, git reset --hard, force push, migrations) and shows what they would change, with Proceed and Cancel buttons. By Anthropic (vendored)."
+    },
+    {
+      "name": "replay-theater",
+      "source": "./mods/replay-theater",
+      "description": "Step through the file edits Claude made in the last turn, one diff at a time. By Anthropic (vendored)."
+    },
+    {
+      "name": "reflect-mod",
+      "source": "./mods/reflect-mod",
+      "description": "Finds reusable corrections in your short prompts and saves them to CLAUDE.md from a band above the prompt. By Bayram Annakov (vendored)."
     }
-  ]
+  ],
+  "description": "Personal Claude Code mods: my own plus vendored third-party ones, kept in one place."
 }
