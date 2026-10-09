@@ -11,6 +11,8 @@ My Claude Code mods in one place: plugins of function hooks that add UI, command
 | [blast-radius](mods/blast-radius) | Holds a risky shell command (`rm -rf`, `git reset --hard`, force push, migration) and shows what it would change, with Proceed and Cancel. | [anthropics/claude-code-playground → blast-radius](https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/blast-radius) |
 | [replay-theater](mods/replay-theater) | Step through the file edits Claude made in the last turn, one diff at a time. | [anthropics/claude-code-playground → replay-theater](https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/replay-theater) |
 | [reflect-mod](mods/reflect-mod) | Finds reusable corrections in your short prompts and saves them to `CLAUDE.md` from a band above the prompt. | [BayramAnnakov/claude-reflect](https://github.com/BayramAnnakov/claude-reflect) (its `mod/` folder) |
+| [savvy-progress](mods/savvy-progress) | Progress bar above the prompt for `/savvy-flow` plus a live panel of subagents with model, context, cost and time. | [JohnnyVizz/claude-kit → savvy-progress](https://github.com/JohnnyVizz/claude-kit/tree/main/plugins/savvy-progress) |
+| [savvy-flow](mods/savvy-flow) | Skill plus five tiered worker subagents: the session model plans and reviews, workers implement (`/savvy-flow:savvy-flow <task>`). Not a hooks mod. | [JohnnyVizz/claude-kit → savvy-flow](https://github.com/JohnnyVizz/claude-kit/tree/main/plugins/savvy-flow) |
 
 ## Where the vendored mods came from
 
@@ -22,14 +24,16 @@ Go to the original for updates, issues and the author's own docs. Each vendored 
 | blast-radius | https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/blast-radius | Anthropic PBC | Apache-2.0 | `main` @ `569c528` |
 | replay-theater | https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods/replay-theater | Anthropic PBC | Apache-2.0 | `main` @ `569c528` |
 | reflect-mod | https://github.com/BayramAnnakov/claude-reflect/tree/main/mod | Bayram Annakov | MIT | `main` @ `b6c4232` |
+| savvy-progress | https://github.com/JohnnyVizz/claude-kit/tree/main/plugins/savvy-progress | johnnyvizz | MIT | `main` @ `272a877` |
+| savvy-flow | https://github.com/JohnnyVizz/claude-kit/tree/main/plugins/savvy-flow | johnnyvizz | MIT | `main` @ `272a877` |
 
-The code is as published, except `reflect-mod/README.md`, where two image/doc links were repointed. The rest of `claude-reflect` (its Python plugin) and the `token-weather` mod from the playground are not included.
+The code is as published, except `reflect-mod/README.md`, where two image/doc links were repointed. Not included: the rest of `claude-reflect` (its Python plugin), the `token-weather` mod from the playground, and everything else in `claude-kit`.
 
 ## Install everything (global)
 
 ```bash
 claude plugin marketplace add icedevil2001/claude-mods
-for m in auto-continue cache-tax blast-radius replay-theater reflect-mod; do
+for m in auto-continue cache-tax blast-radius replay-theater reflect-mod savvy-progress savvy-flow; do
   claude plugin install "$m@claude-mods" --scope user
 done
 ```
@@ -42,7 +46,7 @@ Try a mod for one session without installing: `claude --plugin-dir ~/git/Claude_
 
 - **Install only what you want.** `cache-tax` pings the model while armed and `reflect-mod` sends each short prompt to a small model, so both use tokens.
 - **Don't run the original `claude-reflect` Python plugin alongside `reflect-mod`** (every correction would be captured twice).
-- **Versions:** `cache-tax` says it needs Claude Code 2.1.287+ and `reflect-mod` 2.1.286+. All five mods install and answer their commands on 2.1.286 (checked 2026-10-08, headless), and `claude plugin validate` passes for all; `auto-continue`, `cache-tax` and `reflect-mod` also pass their own tests. The mod API is early access and moves between releases.
+- **Versions:** `cache-tax` says it needs Claude Code 2.1.287+ and `reflect-mod` 2.1.286+. The first five mods (everything except `savvy-progress` and `savvy-flow`) install and answer their commands on 2.1.286 (checked 2026-10-08, headless), and `claude plugin validate` passes for all; `auto-continue`, `cache-tax` and `reflect-mod` also pass their own tests. The mod API is early access and moves between releases.
 - Check one with `claude plugin validate mods/<name>`; mods with tests run with `claude plugin test mods/<name>`.
 
 ## Licenses

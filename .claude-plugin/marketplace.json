@@ -28,6 +28,16 @@
       "name": "reflect-mod",
       "source": "./mods/reflect-mod",
       "description": "Finds reusable corrections in your short prompts and saves them to CLAUDE.md from a band above the prompt. By Bayram Annakov (vendored)."
+    },
+    {
+      "name": "savvy-progress",
+      "source": "./mods/savvy-progress",
+      "description": "Progress bar above the prompt for /savvy-flow plus a live panel of subagents with model, context, cost and time. By johnnyvizz (vendored)."
+    },
+    {
+      "name": "savvy-flow",
+      "source": "./mods/savvy-flow",
+      "description": "Orchestrated delivery flow: the session model plans and reviews, five tiered worker subagents implement. By johnnyvizz (vendored)."
     }
   ],
   "description": "Personal Claude Code mods: my own plus vendored third-party ones, kept in one place."
